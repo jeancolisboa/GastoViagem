@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GastoViagem</string>
+    <string name="edit_distance">Distância</string>
+    <string name="edit_price">Preço</string>
+    <string name="edit_autonomy">Autonomia</string>
+    <string name="button_calculate">Calcular</string>
+    <string name="text_total_kms">R$ 0</string>
+    <string name="validation_space">Preencha os campos acima</string>
+</resources>
