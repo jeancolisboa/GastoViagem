@@ -17,11 +17,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root) //defino a visualizacao do conteudo da atividade como a visualizacao raiz do layout inflado
 
         binding.buttonCalculate.setOnClickListener(this) //chamando o botao do xml
+        binding.buttonClear.setOnClickListener(this)
     }
 
     override fun onClick(view: View){ //funcao onclick
-        if(view.id == R.id.button_calculate){
-            calculate() //executa essa funcao que esta dentro do bloco
+        when(view.id){
+            R.id.button_calculate -> calculate()
+            R.id.button_clear -> clearFields()
         }
     }
 
@@ -41,11 +43,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val total = (distance * price) / autonomy // declarando a variavel total e passando a logica
             binding.textTotalValue.text ="R$ ${"%.2f".format(total)}" //colocando o resultado para o text_view, formatando seu resultado
 
+            binding.buttonClear.visibility = View.VISIBLE
+
         } else {
             Toast.makeText(this,R.string.validation_space,Toast.LENGTH_LONG).show() //exibe um texto na tela ao clicar com os campos vazios
         }
 
+    }
 
-
+    private fun clearFields(){
+        binding.editDistance.text.clear()
+        binding.editPrice.text.clear()
+        binding.editAutonomy.text.clear()
+        binding.textTotalValue.text = "" // Limpa o resultado também, se houver
+        binding.buttonClear.visibility = View.INVISIBLE // Torna o botão "Limpar" invisível novamente
     }
 }
