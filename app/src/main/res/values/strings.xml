@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GastoViagem</string>
+    <string name="app_name">Gasto Viagem</string>
     <string name="edit_distance">Distância</string>
     <string name="edit_price">Preço</string>
     <string name="edit_autonomy">Autonomia</string>
